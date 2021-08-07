@@ -1,0 +1,28 @@
+.mainHeader {
+   border: 2px solid red;
+   color: #ccccc9;
+   font-weight: 500;
+   font-size: 1.25rem;
+}
+
+.navbar {
+   margin: 2rem 5rem;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
+   &_logo,
+   &_menu {
+      cursor: pointer;
+   }
+
+   &_menu {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &_item {
+      margin-right: 1.5rem;
+   }
+}
