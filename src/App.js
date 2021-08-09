@@ -1,29 +1,38 @@
 import { Fragment, useEffect, useState } from "react";
 import axios from "axios";
+import "./App.scss";
 import Header from "./components/Header/Header";
+import Search from "./components/Search/Search";
+import LanguageSelector from "./components/LanguageSelector/LanguageSelector";
 
 function App() {
-   const [definition, setDefinition] = useState([]);
+   const [wordQuery, setWordQuery] = useState([]);
+   const [userInputWord, setUserInputWord] = useState("dictionary");
+   const [userInputLanguage, setUserInputLanguage] = useState("en_US");
 
    const dictionaryApi = async () => {
       try {
-         const apiData = await axios.get("https://api.dictionaryapi.dev/api/v2/entries/en_US/hello");
-
-         setDefinition(apiData.data); // Updating the state with the data array
+         const apiData = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${userInputLanguage}/${userInputWord}`);
+         setWordQuery(apiData.data);
       } catch (error) {
          console.log(error);
       }
    };
 
-   // console.log(definition);
-
    useEffect(() => {
       dictionaryApi();
-   }, []);
+   }, [userInputWord, userInputLanguage]);
 
    return (
       <Fragment>
          <Header />
+
+         <main className='searchAndLanguage'>
+            <Search onChange={(value) => console.log(value)} />
+            <LanguageSelector onChange={(value) => console.log(value)} />
+         </main>
+
+         {wordQuery[0] !== undefined && <div style={{ color: "white" }}>{wordQuery[0].meanings[0].definitions[0].definition}</div>}
       </Fragment>
    );
 }

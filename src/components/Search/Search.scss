@@ -1,0 +1,14 @@
+.inputText {
+   width: 65vw;
+   font-size: 6rem;
+   font-weight: 800;
+   font-family: "Segoe UI";
+   background-color: #1b1b1b;
+   color: white;
+   border: none;
+}
+
+.inputText:focus {
+   border: none;
+   outline: none;
+}

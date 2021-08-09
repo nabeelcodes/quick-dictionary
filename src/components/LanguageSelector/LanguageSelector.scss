@@ -1,0 +1,45 @@
+.languageBox {
+   height: 100%;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   justify-content: center;
+
+   .selectLabel {
+      color: #959595;
+      font-size: 1rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+   }
+
+   .select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      font-size: 1.25rem;
+      font-weight: bold;
+      text-align: center;
+      width: 60%;
+      padding: 0.35rem 2rem;
+      padding-bottom: 0.5rem;
+      background-color: #1b1b1b;
+      color: white;
+      border: 2px solid #959595;
+      border-radius: 2rem;
+      cursor: pointer;
+      transition: border-color 300ms linear;
+
+      &_options {
+         font-size: 0.85rem;
+         background: #1b1b1b;
+      }
+   }
+
+   .select:focus,
+   .select:hover {
+      outline: none;
+      border-color: white;
+      transition: border-color 300ms linear;
+   }
+}

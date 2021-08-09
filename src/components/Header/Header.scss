@@ -1,12 +1,13 @@
 .mainHeader {
-   border: 2px solid red;
-   color: #ccccc9;
+   color: #e6e6dc;
    font-weight: 500;
    font-size: 1.25rem;
+   height: 15vh;
 }
 
 .navbar {
-   margin: 2rem 5rem;
+   height: inherit;
+   margin: 0rem 5rem;
    display: flex;
    justify-content: space-between;
    align-items: center;
