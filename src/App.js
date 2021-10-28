@@ -12,8 +12,8 @@ function App() {
 
    const dictionaryApi = async () => {
       try {
-         const apiData = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${userInputLanguage}/${userInputWord}`);
-         setWordQuery(apiData.data);
+         const dataFromApi = await axios.get(`https://api.dictionaryapi.dev/api/v2/entries/${userInputLanguage}/${userInputWord}`);
+         setWordQuery(dataFromApi.data);
       } catch (error) {
          console.log(error);
       }
